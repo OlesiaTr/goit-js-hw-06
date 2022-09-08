@@ -15,22 +15,29 @@ const images = [
 
 const galleryRef = document.querySelector(".gallery");
 
+const makeGalleryList = images.map(({ url, alt }) => {
+  return `<li><img src="${url}" alt="${alt}" style="width: 320px;"></li>`;
+});
+
+const galleryMarkup = makeGalleryList.join(" ");
+galleryRef.innerHTML = galleryMarkup;
+
 // Making one <li> with one <img>
-const makeGalleryList = ({ url, alt }) => {
-  const itemEl = document.createElement("li");
+// const makeGalleryList = ({ url, alt }) => {
+//   const itemEl = document.createElement("li");
 
-  const imgEl = document.createElement("img");
-  imgEl.src = url;
-  imgEl.alt = alt;
-  imgEl.style.width = "320px";
+//   const imgEl = document.createElement("img");
+//   imgEl.src = url;
+//   imgEl.alt = alt;
+//   imgEl.style.width = "320px";
 
-  itemEl.insertAdjacentElement("afterbegin", imgEl);
+//   itemEl.insertAdjacentElement("afterbegin", imgEl);
 
-  return itemEl;
-};
+//   return itemEl;
+// };
 
-// going through all objects of the array
-const elements = images.map(makeGalleryList);
+// // going through all objects of the array
+// const elements = images.map(makeGalleryList);
 
-// inserting markup into HTML
-galleryRef.append(...elements);
+// // inserting markup into HTML
+// galleryRef.append(...elements);

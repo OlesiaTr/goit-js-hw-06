@@ -16,12 +16,11 @@ const onFormInput = (event) => {
   // const formData = new FormData(event.currentTarget);
   // formData.forEach((value, name) => {return `name, value`})
 
-  console.log(formData);
-
   if (email === "" || pswrd === "") {
     alert(`All fields must be filled in!!!`);
   } else {
     refs.form.reset();
+    console.log(formData);
   }
 };
 

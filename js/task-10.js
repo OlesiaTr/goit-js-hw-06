@@ -24,13 +24,15 @@ function createBoxes(amount) {
     }px;height: ${30 + i * 10}px"></div>`;
 
     markupTable.push(markupEl);
+    console.dir(refs.boxEl);
   }
-  return (refs.boxEl.innerHTML = markupTable.join(" "));
+  // return (refs.boxEl.innerHTML = markupTable.join(" "));
+  return refs.boxEl.insertAdjacentHTML("beforeend", markupTable.join(""));
 }
 
 const destroyBoxes = () => {
   refs.boxEl.innerHTML = "";
-  refs.controlsEl.firstElementChild.value = "";
+  refs.controlsEl.firstElementChild.value = null;
 };
 
 refs.btnDestroy.addEventListener("click", destroyBoxes);
