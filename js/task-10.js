@@ -13,7 +13,7 @@ const refs = {
 
 refs.btnCreate.addEventListener("click", createBoxes);
 
-const markupTable = [];
+let markupTable = [];
 
 function createBoxes(amount) {
   amount = refs.controlsEl.firstElementChild.value;
@@ -33,6 +33,7 @@ function createBoxes(amount) {
 const destroyBoxes = () => {
   refs.boxEl.innerHTML = "";
   refs.controlsEl.firstElementChild.value = null;
+  markupTable = [];
 };
 
 refs.btnDestroy.addEventListener("click", destroyBoxes);
